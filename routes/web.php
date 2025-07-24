@@ -26,7 +26,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
 // Rotas para Auth
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -40,9 +39,9 @@ Route::middleware('auth')->group(function(){
     route::resource('posts', PostController::class);
 });
 
-// Para rotas de chat 
+// Para rotas de chat já tem que ter feito o Auth  
 route::middleware('auth')->group(function(){
-    Route::get('/chat', [MessageController::class, 'index'])->name('chat');
+    Route::get('/chat', [MessageController::class, 'index'])->name('chat.index');
     Route::get('/chat/messages', [MessageController::class, 'fetch'])->name('chat.fetch');
     Route::post('/chat', [MessageController::class, 'store'])->name('chat.store');
 });

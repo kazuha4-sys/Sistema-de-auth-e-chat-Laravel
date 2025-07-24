@@ -20,8 +20,8 @@
                         {{ __('Posts') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('chats.index')" :active="request()->routeIs('chats.*')">
-                        {{ __('Chats') }}
+                    <x-nav-link :href="route('chat.index')" :active="request()->routeIs('chat.*')">
+                        {{ __('Chat') }}
                     </x-nav-link>
 
                 </div>
